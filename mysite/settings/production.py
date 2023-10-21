@@ -16,7 +16,3 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # necesary for SEC
 SECURE_HSTS_SECONDS = 31536000 # handle security.W004 
 SECURE_HSTS_PRELOAD = True # handle security.W019
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # handle security.W005
- 
-print("stdt production settings")
-print( ROOT_URLCONF )
-print("end production settings")
