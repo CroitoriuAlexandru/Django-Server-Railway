@@ -29,7 +29,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 SESSION_COOKIE_SECURE = True # handle security.W012
 CSRF_COOKIE_SECURE = True # handle security.W016
-SECURE_SSL_REDIRECT = True # handle security.W008
+# SECURE_SSL_REDIRECT = True # handle security.W008
 
 
 
@@ -44,7 +44,7 @@ ALLOWED_HOSTS = ["*"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
-CSRF_TRUSTED_ORIGINS = ["django-server-production-00ab.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://django-server-production-00ab.up.railway.app"]
 
 # Application definition
 
