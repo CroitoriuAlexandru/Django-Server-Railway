@@ -1,7 +1,11 @@
+{% load static tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% tailwind_css %}
+    {% comment %} <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" /> {% endcomment %}
     <title>{% block title %}Base Title{% endblock %}</title>
 </head>
 <body>
@@ -9,5 +13,6 @@
     {% block content %}
     <h1>Base Content</h1>
     {% endblock %}
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script> {% endcomment %}
 </body>
 </html>
