@@ -1,11 +1,11 @@
 from .base import *
 
 
-ALLOWED_HOSTS = ["django-server-production-00ab.up.railway.app"]
+ALLOWED_HOSTS = ["django-server-railway-tailwindflowbite.up.railway.app"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
-CSRF_TRUSTED_ORIGINS = ["https://django-server-production-00ab.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://django-server-railway-tailwindflowbite.up.railway.app"]
 
 SESSION_COOKIE_SECURE = True # handle security.W012
 CSRF_COOKIE_SECURE = True # handle security.W016
