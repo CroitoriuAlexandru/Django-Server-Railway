@@ -1,9 +1,7 @@
 from .base import *
 
-ROOT_URLCONF = 'mysite.urls'
 
-
-ALLOWED_HOSTS = ["django-server-production-00ab.up.railway.app/", "127.0.0.1"]
+ALLOWED_HOSTS = ["django-server-production-00ab.up.railway.app/"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
@@ -20,5 +18,5 @@ SECURE_HSTS_PRELOAD = True # handle security.W019
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # handle security.W005
  
 print("stdt production settings")
-print( ALLOWED_HOSTS )
+print( ROOT_URLCONF )
 print("end production settings")
