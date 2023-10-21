@@ -30,7 +30,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 SESSION_COOKIE_SECURE = True # handle security.W012
 CSRF_COOKIE_SECURE = True # handle security.W016
 SECURE_SSL_REDIRECT = True # handle security.W008
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # necesary for SECURE_SSL_REDIRECT as it runs with a proxy
 
 
 SECURE_HSTS_SECONDS = 31536000 # handle security.W004 
