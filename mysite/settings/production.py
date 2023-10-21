@@ -1,11 +1,11 @@
 from .base import *
 
 
-ALLOWED_HOSTS = ["cuddly-bottle-production-tailwind-flowbite-auth.up.railway.app"]
+ALLOWED_HOSTS = ["cuddly-bottle-production-tailwindflowbiteauth.up.railway.app"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
-CSRF_TRUSTED_ORIGINS = ["https://cuddly-bottle-production-tailwind-flowbite-auth.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://cuddly-bottle-production-tailwindflowbiteauth.up.railway.app"]
 
 SESSION_COOKIE_SECURE = True # handle security.W012
 CSRF_COOKIE_SECURE = True # handle security.W016
