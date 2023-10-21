@@ -29,7 +29,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 SECURE_HSTS_SECONDS = 31536000 # handle security.W004 
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # handle security.W005
 
-SECURE_SSL_REDIRECT = True # handle security.W008
+# SECURE_SSL_REDIRECT = True # handle security.W008
 SESSION_COOKIE_SECURE = True # handle security.W012
 CSRF_COOKIE_SECURE = True # handle security.W016
 SECURE_HSTS_PRELOAD = True # handle security.W019
