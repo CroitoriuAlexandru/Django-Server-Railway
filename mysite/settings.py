@@ -26,13 +26,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ["SECRET_KEY"]
 
-SECURE_HSTS_SECONDS = 31536000 # handle security.W004 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True # handle security.W005
 
-SECURE_SSL_REDIRECT = True # handle security.W008
 SESSION_COOKIE_SECURE = True # handle security.W012
 CSRF_COOKIE_SECURE = True # handle security.W016
+SECURE_SSL_REDIRECT = True # handle security.W008
+
+
+
+SECURE_HSTS_SECONDS = 31536000 # handle security.W004 
 SECURE_HSTS_PRELOAD = True # handle security.W019
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True # handle security.W005
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ["DEBUG"]
@@ -41,7 +44,7 @@ ALLOWED_HOSTS = ["*"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
-CSRF_TRUSTED_ORIGINS = ["https://django-server-production-00ab.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["django-server-production-00ab.up.railway.app"]
 
 # Application definition
 
