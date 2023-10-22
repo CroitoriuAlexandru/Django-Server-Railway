@@ -18,3 +18,4 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+CSRF_TRUSTED_ORIGINS = ["https://127.0.0.1:8000"]
