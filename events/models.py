@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class Client(models.Model):
     name = models.CharField(max_length=200)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    phone = models.CharField(max_length=12)
     
     def __str__(self):
         return self.phone + " | " + self.name
