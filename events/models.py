@@ -12,7 +12,6 @@ class Client(models.Model):
     
     def __str__(self):
         return self.phone + " | " + self.name
-
     
 class Event(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
