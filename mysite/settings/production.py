@@ -1,7 +1,7 @@
 from .base import *
 
 
-ALLOWED_HOSTS = ["https://complex-picture-production.up.railway.app"]
+ALLOWED_HOSTS = ["complex-picture-production.up.railway.app"]
 
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
