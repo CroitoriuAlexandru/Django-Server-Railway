@@ -3,9 +3,32 @@ from .models import Client, Event, Service, GenericService
 
 class ClientForm(forms.ModelForm):
 
+    # name = forms.CharField(
+    #     label='', 
+    #     max_length=200, 
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'placeholder': 'Name',
+    #             'class': "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    #             }
+    #         )
+    #     )
+
+    # phone = forms.CharField(
+    #     label='', 
+    #     max_length=12, 
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'placeholder': 'Phone',
+    #             'class': "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    #             }
+    #         )
+    #     )
+
     class Meta:
         model = Client
-        fields = ['name', 'phone']
+        fields = '__all__'
+
 
 class EventForm(forms.ModelForm):
     class Meta:

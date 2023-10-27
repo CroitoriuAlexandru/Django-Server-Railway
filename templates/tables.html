@@ -3,7 +3,6 @@
 {% block content %}
 
 
-{% if clients %}
 <div class="relative overflow-x-auto mx-auto max-w-fit">
 
     <div class="w-full flex items-center justify-around py-2 bg-white dark:bg-gray-800">
@@ -33,7 +32,7 @@
             </tr>
         </thead>
         <tbody>
-
+        {% if clients %}
             {% for client in clients %}
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <td class="">
@@ -53,7 +52,7 @@
                 </td>
             </tr>
             {% endfor %}
-
+        {% endif %}
         </tbody>
     </table>
 </div>
@@ -62,6 +61,5 @@
 
 
 
-{% endif %}
 
 {% endblock %}

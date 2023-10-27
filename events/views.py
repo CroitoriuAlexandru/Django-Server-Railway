@@ -4,11 +4,10 @@ from .forms import ClientForm
 from .models import Client, Event, Service, GenericService
 
 # Create your views here.
-def tables(request):
+def clientsTables(request):
     context = {}
     clients = Client.objects.all()
     context['clients'] = clients
-
     return render(request, 'tables.html', context)
 
 
@@ -19,17 +18,16 @@ def createClient(request):
             try:  
                 form.save()
                 print("redirect")
-                return redirect('tables')
+                return clientsTables(request)
             except:
                 print("error")
                 pass 
     else:
-        context = {}
         form = ClientForm()
-        form.fields['name'] = ''
-        form.fields['phone'] = ''
-        context['form'] = form
-        context['btnText'] = "Create"
+        context = {
+            'form': form,
+            'btnText': 'Create'
+        }
         return render(request,'forms/client.html', context)
 
 def updateClient(request, client_id): 

@@ -1,5 +1,5 @@
 from django.db import models
-# from phonenumber_field.modelfields import PhoneNumberField
+from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class Client(models.Model):
     name = models.CharField(max_length=200)
-    phone = models.CharField(max_length=12)
+    phone = PhoneNumberField()
     
     def __str__(self):
         return self.name
