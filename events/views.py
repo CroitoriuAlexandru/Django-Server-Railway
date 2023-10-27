@@ -29,25 +29,20 @@ def updateClient(request, client_id):
     client = Client.objects.get(id=client_id)
     if request.method == "POST":
         form = ClientForm(request.POST, instance = client)
-        if form.is_valid():  
-            try:  
-                form.save()
-                print("redirect")
-                return redirect('tables')  
-            except:
-                print("error")
-                pass
-    else:
-        context = {}
-
-        context['form'] = ClientForm(instance = client)
-        context['btnText'] = "Update"
-        return render(request,'forms/client.html', context)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('tableClients'))
+        
+        context = {'form': form, 'btnText': 'Update'}
+        return render(request, 'forms/client.html', context)
+    
+    context = {'form': ClientForm(instance = client), 'btnText': 'Update'}
+    return render(request, 'forms/client.html', context)
 
 def deleteClient(request, client_id):
     client = Client.objects.get(id=client_id)
     client.delete()
-    return redirect('/tables')
+    return redirect(reverse('tableClients'))
 
 
 def dashboard(request):
