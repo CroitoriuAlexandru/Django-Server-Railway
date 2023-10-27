@@ -1,34 +1,29 @@
 from django.shortcuts import render
 from django.shortcuts import redirect, resolve_url
+from django.urls import reverse
 from .forms import ClientForm
 from .models import Client, Event, Service, GenericService
 
 # Create your views here.
 def clientsTables(request):
-    context = {}
     clients = Client.objects.all()
-    context['clients'] = clients
+    context = {'clients': clients, 'form': ClientForm()}
     return render(request, 'tables.html', context)
 
 
-def createClient(request):  
+def createClient(request):
     if request.method == "POST":  
         form = ClientForm(request.POST)  
-        if form.is_valid():  
-            try:  
-                form.save()
-                print("redirect")
-                return clientsTables(request)
-            except:
-                print("error")
-                pass 
-    else:
-        form = ClientForm()
-        context = {
-            'form': form,
-            'btnText': 'Create'
-        }
-        return render(request,'forms/client.html', context)
+        if form.is_valid():
+            print(form.data.get('phone'))
+            form.save()
+            return redirect(reverse('tableClients'))
+        
+        context = {'form': form, 'btnText': 'Create'}
+        return render(request, 'forms/client.html', context)
+
+    context = {'form': ClientForm(), 'btnText': 'Create'}
+    return render(request,'forms/client.html', context)
 
 def updateClient(request, client_id): 
     client = Client.objects.get(id=client_id)
