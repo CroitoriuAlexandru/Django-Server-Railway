@@ -9,9 +9,9 @@ load_dotenv()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name="home"),
     path('members/', include('django.contrib.auth.urls')) ,
     path('members/', include('members.urls')),
+    path('', home, name="home"),
     path('', include('events.urls')),
 ]
 
